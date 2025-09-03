@@ -23,8 +23,8 @@
 
 
 
-## 首先对数据data[2],两个32位的数据进行CRC校验，得到crc = 0xC15A147D。  
-## **关键函数：**  
+### 首先对数据data[2],两个32位的数据进行CRC校验，得到crc = 0xC15A147D。  
+### **关键函数：**  
 **HAL_CRC_Calculate(&hcrc, data, 2);**  
 
 这段代码实现了CRC（循环冗余校验）的累加计算功能。具体分析如下  
@@ -37,8 +37,8 @@
 - **pBuffer**：指向输入数据缓冲区的指针
 - **BufferLength**：输入数据缓冲区的长度（以32位字为位）
 
-## 然后重置crc的值，再对data[2]进行分两次进行CRC校验，得到crc = 0xC15A147D。
-
+### 然后重置crc的值，再对data[2]进行分两次进行CRC校验，得到crc = 0xC15A147D。
+### **关键函数：**  
 **HAL_CRC_Accumulate(&hcrc, data + 1, 1)**
 
 这段代码实现了CRC（循环冗余校验）的独立计算功能。具体分析如下  
@@ -64,4 +64,7 @@
 4. 与HAL_CRC_Accumulate的<font color="red">关键区别</font>：
 - HAL_CRC_Calculate每次都会重置CRC计算单元，使用预的初始值
 - 而HAL_CRC_Accumulate则是在之前计算结果的基础上继续算
+
+
+
 
