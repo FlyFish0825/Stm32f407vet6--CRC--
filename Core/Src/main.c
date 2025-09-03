@@ -98,7 +98,8 @@ int main(void)
   volatile uint32_t crc = 0;
   //适用于数据量不大，一次性处理完
   crc = HAL_CRC_Calculate(&hcrc, data, 2);
-  printf("CRC Result: %08X\n", crc); //0xC15A147D
+  printf("CRC Result: %08X\n", crc); 
+	//结果0xC15A147D
 
 
   //重置CRC的值
@@ -107,9 +108,11 @@ int main(void)
   
   //分两次进行CRC校验，适用于数据量大分批次传输进行校验
   crc = HAL_CRC_Calculate(&hcrc, data, 1);
-  printf("CRC Temp  Result: %08X\n")  //0xDF8A8A2B
+  printf("CRC Temp  Result: %08X \n");  
+	//结果0xDF8A8A2B
   crc = HAL_CRC_Accumulate(&hcrc, data + 1, 1);
-  printf("CRC   Accumulate  Result: %08X\n", crc); //0xC15A147D
+  printf("CRC   Accumulate  Result: %08X\n", crc); 
+	//结果0xC15A147D
 
 
 
