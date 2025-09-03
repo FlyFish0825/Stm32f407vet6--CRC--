@@ -25,7 +25,8 @@
 
 ## 首先对数据data[2],两个32位的数据进行CRC校验，得到crc = 0xC15A147D。  
 ## **关键函数：**  
-**HAL_CRC_Calculate(&hcrc, data, 2);**
+**HAL_CRC_Calculate(&hcrc, data, 2);**  
+
 这段代码实现了CRC（循环冗余校验）的累加计算功能。具体分析如下  
 1. 函数功能：
 - HAL_CRC_Accumulate函数用于计算32位数据缓冲区的CRC值
