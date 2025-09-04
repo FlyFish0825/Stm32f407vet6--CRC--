@@ -125,7 +125,6 @@ int main(void)
 
 
 
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -133,9 +132,11 @@ int main(void)
   while (1)
   {
     
+    //使用中断方式接收数据
+    HAL_I2C_Slave_Receive_IT(&hi2c1, recriveBuffer, 8);
     
-    
-    HAL_I2C_Slave_Receive(&hi2c1, recriveBuffer, 8, HAL_MAX_DELAY);
+    //使用阻塞方式接收数据
+    //HAL_I2C_Slave_Receive(&hi2c1, recriveBuffer, 8, HAL_MAX_DELAY);
     
     /* USER CODE END WHILE */
 

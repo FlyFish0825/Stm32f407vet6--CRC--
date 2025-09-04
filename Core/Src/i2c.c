@@ -164,5 +164,11 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
 }
 
 /* USER CODE BEGIN 1 */
-
+void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c)
+{
+  if(hi2c==&hi2c1)
+  {
+    printf("receive over\n");
+  }
+}
 /* USER CODE END 1 */

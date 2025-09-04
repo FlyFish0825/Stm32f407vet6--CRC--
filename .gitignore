@@ -146,3 +146,9 @@ MDK-ARM/bootloader/stm32f4xx_hal_i2c.o
 MDK-ARM/bootloader/i2c.crf
 MDK-ARM/bootloader/stm32f4xx_hal_i2c_ex.crf
 MDK-ARM/bootloader/stm32f4xx_hal_i2c.crf
+.cache/clangd/index/dma.c.98DFD236A8AFC046.idx
+.cache/clangd/index/dma.h.A3DF02FEC2702E63.idx
+MDK-ARM/bootloader/dma.crf
+MDK-ARM/bootloader/dma.d
+MDK-ARM/bootloader/dma.o
+MDK-ARM/bootloader/ExtDll.iex

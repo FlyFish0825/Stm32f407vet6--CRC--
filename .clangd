@@ -1,0 +1,12 @@
+CompileFlags:
+  Add: [
+    -Wall,
+    -Wextra,
+    -std=c++17,
+    -DSTM32F407xx
+    -DUSE_HAL_DRIVER
+  ]
+Index:
+  Background: Build
+Diagnostics:
+  UnusedIncludes: Strict

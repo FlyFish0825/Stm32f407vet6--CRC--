@@ -114,6 +114,32 @@
             "-D_RTE_",
             "-DUSE_HAL_DRIVER",
             "-DSTM32F407xx",
+            "--omf_browse bootloader/dma.crf",
+            "-IC:/Keil_v5/ARM/ARMCC/Include"
+        ],
+        "directory": "F:/Project/CubeMx_Project/IAP/Bootloader/MDK-ARM",
+        "file": "../Core/Src/dma.c"
+    },
+    {
+        "arguments": [
+            "--c99",
+            "-c",
+            "-D__MICROLIB",
+            "-g",
+            "-O3",
+            "-I../Core/Inc",
+            "-I../Drivers/STM32F4xx_HAL_Driver/Inc",
+            "-I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
+            "-I../Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+            "-I../Drivers/CMSIS/Include",
+            "-I./RTE/_bootloader",
+            "-IC:/Users/Administered/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include",
+            "-D__UVISION_VERSION=537",
+            "-D_RTE_",
+            "-DSTM32F407xx",
+            "-D_RTE_",
+            "-DUSE_HAL_DRIVER",
+            "-DSTM32F407xx",
             "--omf_browse bootloader/i2c.crf",
             "-IC:/Keil_v5/ARM/ARMCC/Include"
         ],
