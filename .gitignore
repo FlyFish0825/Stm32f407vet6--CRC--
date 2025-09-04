@@ -78,3 +78,9 @@ MDK-ARM/bootloader/usart.d
 MDK-ARM/bootloader/usart.o
 MDK-ARM/bootloader.uvguix.Administered
 
+MDK-ARM/bootloader/i2c.d
+MDK-ARM/bootloader/i2c.o
+MDK-ARM/bootloader/stm32f4xx_hal_i2c_ex.d
+MDK-ARM/bootloader/stm32f4xx_hal_i2c_ex.o
+MDK-ARM/bootloader/stm32f4xx_hal_i2c.d
+MDK-ARM/bootloader/stm32f4xx_hal_i2c.o

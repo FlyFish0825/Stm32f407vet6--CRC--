@@ -110,11 +110,17 @@ int main(void)
   
   //分两次进行CRC校验，适用于数据量大分批次传输进行校验
   crc = HAL_CRC_Calculate(&hcrc, data, 1);
-  printf("CRC Temp  Result: %08X \n");  
+  printf("CRC Temp  Result: %08X \n",crc);  
 	//结果0xDF8A8A2B
   crc = HAL_CRC_Accumulate(&hcrc, data + 1, 1);
   printf("CRC   Accumulate  Result: %08X\n", crc); 
 	//结果0xC15A147D
+
+  
+
+  uint8_t recriveBuffer[8] ;
+
+
 
 
 
@@ -124,6 +130,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    HAL_I2C_Slave_Receive(&hi2c1, recriveBuffer, 8, HAL_MAX_DELAY);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
