@@ -28,6 +28,8 @@
 /* USER CODE BEGIN Includes */
 #include <cstdint>
 #include <stdio.h>
+#include "iap.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -132,14 +134,18 @@ int main(void)
 
 
 
-
-
+  uint8_t WriteBuffer[4] = {0x17, 0x34, 0x56, 0x78};
+	uint32_t WriteBuffer32 = 0x12345678;
   HAL_FLASH_Unlock();
   HAL_FLASHEx_Erase(&FlashEraseInit,&Sector_Error);
-  HAL_FLASH_Program(FLASH_TYPEPROGRAM_BYTE, 0x08040000, 0x55);
+  HAL_FLASH_Program(FLASH_TYPEPROGRAM_BYTE, 0x08020000, WriteBuffer[2]);
   HAL_FLASH_Lock();
 	
-	uint32_t *p = (uint32_t *)(0x08004004);
+	uint8_t *p = (uint8_t *)(0x08020000);
+	
+	
+	
+	
 	printf("%x\n",*p);
   /* USER CODE END 2 */
 
