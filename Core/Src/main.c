@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "crc.h"
+#include "dma.h"
 #include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
@@ -89,6 +90,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART1_UART_Init();
   MX_CRC_Init();
   MX_I2C1_Init();
@@ -130,7 +132,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    
+    
+    
     HAL_I2C_Slave_Receive(&hi2c1, recriveBuffer, 8, HAL_MAX_DELAY);
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
