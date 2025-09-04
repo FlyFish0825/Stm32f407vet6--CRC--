@@ -26,6 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <cstdint>
 #include <stdio.h>
 /* USER CODE END Includes */
 
@@ -121,10 +122,25 @@ int main(void)
   
 
   uint8_t recriveBuffer[8] ;
+  FLASH_EraseInitTypeDef FlashEraseInit;
+  volatile uint32_t Sector_Error; 
+  FlashEraseInit.TypeErase = FLASH_TYPEERASE_SECTORS;
+
+  FlashEraseInit.Sector = FLASH_SECTOR_5;
+  FlashEraseInit.NbSectors = 1;
+  FlashEraseInit.VoltageRange = FLASH_VOLTAGE_RANGE_3;
 
 
 
 
+
+  HAL_FLASH_Unlock();
+  HAL_FLASHEx_Erase(&FlashEraseInit,&Sector_Error);
+  HAL_FLASH_Program(FLASH_TYPEPROGRAM_BYTE, 0x08040000, 0x55);
+  HAL_FLASH_Lock();
+	
+	uint32_t *p = (uint32_t *)(0x08004004);
+	printf("%x\n",*p);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -134,6 +150,9 @@ int main(void)
     
     //使用中断方式接收数据
     HAL_I2C_Slave_Receive_IT(&hi2c1, recriveBuffer, 8);
+
+    //使用DMA方式接收数据
+    HAL_I2C_Slave_Receive_DMA(&hi2c1, recriveBuffer, 8);
     
     //使用阻塞方式接收数据
     //HAL_I2C_Slave_Receive(&hi2c1, recriveBuffer, 8, HAL_MAX_DELAY);
